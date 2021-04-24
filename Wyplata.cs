@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data.Common;
-using System.Configuration;
+using System.Windows.Forms;
 
 namespace Bankomat
 {
@@ -51,7 +43,6 @@ namespace Bankomat
                         }
                         else
                             MessageBox.Show("Wystąpił problem spróbuj ponownie później");
-
                     }
                 }
                 catch (Exception ex)

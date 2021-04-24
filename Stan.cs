@@ -67,7 +67,7 @@ namespace Bankomat
                 {
                     while (dataReader.Read())
                     {
-                        String st = ($"{dataReader["Money"]} ");
+                        String st = ($"{dataReader["Money"]}");
                         st = st.Substring(0, st.Length - 3);
                         stan_konta.Text = (st + " zł");
                     }

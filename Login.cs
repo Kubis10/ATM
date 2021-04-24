@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data.Common;
-using System.Configuration;
+using System.Windows.Forms;
 
 namespace Bankomat
 {
@@ -26,12 +18,10 @@ namespace Bankomat
             {
                 e.Handled = true;
             }
-
         }
 
         private void Login_btn_Click(object sender, EventArgs e)
         {
-            
             SqlConnection conn = new SqlConnection(@"Data Source=GAMEING-DESKTOP\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False;");
             conn.Open();
             SqlCommand cmd = new SqlCommand("select * from [Table] where CardID = @cardId and Pin = @pinCode;", conn);

@@ -24,7 +24,6 @@ namespace Bankomat
             }
         }
 
-
         private void zmien_btn_Click(object sender, EventArgs e)
         {
             string provider = ConfigurationManager.AppSettings["provider"];
@@ -70,7 +69,8 @@ namespace Bankomat
 
             if (ZmienPin.pin == textBox1.Text)
             {
-                if (textBox2.Text.Length == 4) {
+                if (textBox2.Text.Length == 4)
+                {
                     if (textBox2.Text == textBox3.Text)
                     {
                         string connetionString = null;

@@ -61,7 +61,7 @@ namespace Bankomat
                     }
                 }
 
-                command.CommandText = ("Select [Money] From [Table] Where CardID="+ Program.globalCardId.ToString());
+                command.CommandText = ("Select [Money] From [Table] Where CardID='"+ Program.globalCardId + "'");
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {

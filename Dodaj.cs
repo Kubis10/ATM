@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Configuration;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Bankomat
 {
@@ -32,51 +26,51 @@ namespace Bankomat
 
         private void okey_btn_Click(object sender, EventArgs e)
         {
-            string provider = ConfigurationManager.AppSettings["provider"];
-
-            string connectionString = ConfigurationManager.AppSettings["connectionString"];
-
-            DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
-
-            using (DbConnection connection = factory.CreateConnection())
+            if (cardID_box.Text.Length == 11)
             {
-                if (connection == null)
+                if (pin_box.Text.Length == 4)
                 {
-                    Console.WriteLine("Connection Error");
-                    Console.ReadLine();
-                    return;
-                }
+                    string provider = ConfigurationManager.AppSettings["provider"];
 
-                connection.ConnectionString = connectionString;
+                    string connectionString = ConfigurationManager.AppSettings["connectionString"];
 
-                connection.Open();
+                    DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
 
-                DbCommand command = factory.CreateCommand();
-
-                if (command == null)
-                {
-                    Console.WriteLine("Command Error");
-                    Console.ReadLine();
-                    return;
-                }
-
-                command.Connection = connection;
-
-                command.CommandText = ("Select * From [Table] where CardID = " + cardID_box.Text);
-
-                using (DbDataReader dataReader = command.ExecuteReader())
-                {
-                    while (dataReader.Read())
+                    using (DbConnection connection = factory.CreateConnection())
                     {
-                        Dodaj.czy_cardid = true;
-                    }
-                }
-            }
+                        if (connection == null)
+                        {
+                            Console.WriteLine("Connection Error");
+                            Console.ReadLine();
+                            return;
+                        }
 
-            if (pin_box.Text.Length == 4)
-            {
-                if (cardID_box.Text.Length == 11)
-                {
+                        connection.ConnectionString = connectionString;
+
+                        connection.Open();
+
+                        DbCommand command = factory.CreateCommand();
+
+                        if (command == null)
+                        {
+                            Console.WriteLine("Command Error");
+                            Console.ReadLine();
+                            return;
+                        }
+
+                        command.Connection = connection;
+
+                        command.CommandText = ("Select * From [Table] where CardID = '" + cardID_box.Text + "'");
+
+                        using (DbDataReader dataReader = command.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                Dodaj.czy_cardid = true;
+                            }
+                        }
+                    }
+
                     if (Dodaj.czy_cardid == false)
                     {
                         string connetionString = null;
@@ -84,7 +78,7 @@ namespace Bankomat
 
                         connetionString = "Data Source=GAMEING-DESKTOP\\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False";
 
-                        sql = "INSERT INTO [Table] VALUES (NULL, '@CardId', '@Pin', '@Money')";
+                        sql = "INSERT INTO [Table] (CardId, Pin, Money) VALUES (@CardId, @Pin, @Money)";
 
                         using (SqlConnection cnn = new SqlConnection(connetionString))
                         {
@@ -133,6 +127,13 @@ namespace Bankomat
             {
                 MessageBox.Show("Podano zbyt krótki pin!", "ERROR");
             }
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Hide();
         }
     }
 }

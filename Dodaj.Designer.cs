@@ -37,6 +37,7 @@ namespace Bankomat
             this.label3 = new System.Windows.Forms.Label();
             this.okey_btn = new System.Windows.Forms.Button();
             this.money_box = new System.Windows.Forms.NumericUpDown();
+            this.back_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.money_box)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,11 +113,22 @@ namespace Bankomat
             this.money_box.TabIndex = 7;
             this.money_box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // back_btn
+            // 
+            this.back_btn.Image = global::Bankomat.Properties.Resources.arrow_back;
+            this.back_btn.Location = new System.Drawing.Point(748, 398);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(40, 40);
+            this.back_btn.TabIndex = 8;
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
             // Dodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.back_btn);
             this.Controls.Add(this.money_box);
             this.Controls.Add(this.okey_btn);
             this.Controls.Add(this.label3);
@@ -142,5 +154,6 @@ namespace Bankomat
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button okey_btn;
         private System.Windows.Forms.NumericUpDown money_box;
+        private System.Windows.Forms.Button back_btn;
     }
 }

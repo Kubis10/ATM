@@ -10,6 +10,12 @@ namespace Bankomat
             InitializeComponent();
         }
 
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            if(Program.globalCardId=="12345678901")
+            add_user_btn.Visible = true;
+        }
+
         private void konto_btn_Click(object sender, EventArgs e)
         {
             Stan stan = new Stan();
@@ -51,5 +57,6 @@ namespace Bankomat
             login.Show();
             this.Hide();
         }
+
     }
 }

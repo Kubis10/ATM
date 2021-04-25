@@ -107,6 +107,7 @@ namespace Bankomat
             this.add_user_btn.Text = "Dodaj użytkownika";
             this.add_user_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.add_user_btn.UseVisualStyleBackColor = true;
+            this.add_user_btn.Visible = false;
             this.add_user_btn.Click += new System.EventHandler(this.add_user_btn_Click);
             // 
             // Menu
@@ -123,6 +124,7 @@ namespace Bankomat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
         }

@@ -40,7 +40,9 @@ namespace Bankomat
 
         private void add_user_btn_Click(object sender, EventArgs e)
         {
-
+            Dodaj dodaj = new Dodaj();
+            dodaj.Show();
+            this.Hide();
         }
 
         private void exit_btn_Click(object sender, EventArgs e)

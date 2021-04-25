@@ -38,6 +38,11 @@ namespace Bankomat
             this.Hide();
         }
 
+        private void add_user_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void exit_btn_Click(object sender, EventArgs e)
         {
             Login login = new Login();

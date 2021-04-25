@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dodaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj.Designer.cs">
+      <DependentUpon>Dodaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="ZmienPin.Designer.cs">
       <DependentUpon>ZmienPin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dodaj.resx">
+      <DependentUpon>Dodaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="arrow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="add-user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

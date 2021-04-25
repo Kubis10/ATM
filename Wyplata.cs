@@ -29,7 +29,7 @@ namespace Bankomat
 
                     using (SqlCommand cmd = new SqlCommand(sql, cnn))
                     {
-                        cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = money.Value;
+                        cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = Math.Round(money.Value, 2);
                         cmd.Parameters.Add("@CardId", SqlDbType.NVarChar).Value = Program.globalCardId;
 
                         int rowsAdded = cmd.ExecuteNonQuery();

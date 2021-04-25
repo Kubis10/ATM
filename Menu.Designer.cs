@@ -35,6 +35,7 @@ namespace Bankomat
             this.wyplata_btn = new System.Windows.Forms.Button();
             this.zmien_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
+            this.add_user_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // konto_btn
@@ -95,11 +96,25 @@ namespace Bankomat
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
+            // add_user_btn
+            // 
+            this.add_user_btn.Image = global::Bankomat.Properties.Resources.add_user;
+            this.add_user_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.add_user_btn.Location = new System.Drawing.Point(622, 115);
+            this.add_user_btn.Name = "add_user_btn";
+            this.add_user_btn.Size = new System.Drawing.Size(80, 60);
+            this.add_user_btn.TabIndex = 5;
+            this.add_user_btn.Text = "Dodaj użytkownika";
+            this.add_user_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.add_user_btn.UseVisualStyleBackColor = true;
+            this.add_user_btn.Click += new System.EventHandler(this.add_user_btn_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.add_user_btn);
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.zmien_btn);
             this.Controls.Add(this.wyplata_btn);
@@ -119,5 +134,6 @@ namespace Bankomat
         private System.Windows.Forms.Button wyplata_btn;
         private System.Windows.Forms.Button zmien_btn;
         private System.Windows.Forms.Button exit_btn;
+        private System.Windows.Forms.Button add_user_btn;
     }
 }

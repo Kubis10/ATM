@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dodaj.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,11 +73,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Przelewy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Przelewy.Designer.cs">
+      <DependentUpon>Przelewy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stan.Designer.cs">
       <DependentUpon>Stan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transakcje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transakcje.Designer.cs">
+      <DependentUpon>Transakcje.cs</DependentUpon>
     </Compile>
     <Compile Include="Wplata.cs">
       <SubType>Form</SubType>
@@ -91,6 +109,9 @@
     <Compile Include="ZmienPin.Designer.cs">
       <DependentUpon>ZmienPin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dodaj.resx">
       <DependentUpon>Dodaj.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,8 +131,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Przelewy.resx">
+      <DependentUpon>Przelewy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stan.resx">
       <DependentUpon>Stan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transakcje.resx">
+      <DependentUpon>Transakcje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wplata.resx">
       <DependentUpon>Wplata.cs</DependentUpon>
@@ -140,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="admin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

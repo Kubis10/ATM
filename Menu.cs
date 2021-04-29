@@ -13,7 +13,7 @@ namespace Bankomat
         private void Menu_Load(object sender, EventArgs e)
         {
             if (Program.globalCardId == "12345678901")
-                add_user_btn.Visible = true;
+                admin_btn.Visible = true;
         }
 
         private void konto_btn_Click(object sender, EventArgs e)
@@ -44,10 +44,10 @@ namespace Bankomat
             this.Hide();
         }
 
-        private void add_user_btn_Click(object sender, EventArgs e)
+        private void admin_btn_Click(object sender, EventArgs e)
         {
-            Dodaj dodaj = new Dodaj();
-            dodaj.Show();
+            Admin admin = new Admin();
+            admin.Show();
             this.Hide();
         }
 

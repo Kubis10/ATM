@@ -24,7 +24,7 @@ namespace Bankomat
         {
             SqlConnection conn = new SqlConnection(@"Data Source=GAMEING-DESKTOP\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False;");
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from [Table] where CardID = @cardId and Pin = @pinCode;", conn);
+            SqlCommand cmd = new SqlCommand("select * from [Users] where CardID = @cardId and Pin = @pinCode;", conn);
             cmd.Parameters.Add("@cardId", SqlDbType.VarChar).Value = card_nr.Text;
             cmd.Parameters.Add("@pinCode", SqlDbType.VarChar).Value = pin_nr.Text;
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

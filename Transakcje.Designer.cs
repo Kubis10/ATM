@@ -30,13 +30,25 @@ namespace Bankomat
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transakcje));
+            this.back_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // back_btn
+            // 
+            this.back_btn.Image = global::Bankomat.Properties.Resources.arrow_back;
+            this.back_btn.Location = new System.Drawing.Point(748, 398);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(40, 40);
+            this.back_btn.TabIndex = 13;
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // Transakcje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.back_btn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Transakcje";
             this.Text = "Transakcje";
@@ -45,5 +57,7 @@ namespace Bankomat
         }
 
         #endregion
+
+        private System.Windows.Forms.Button back_btn;
     }
 }

@@ -60,7 +60,7 @@ namespace Bankomat
 
                         command.Connection = connection;
 
-                        command.CommandText = ("Select * From [Table] where CardID = '" + cardID_box.Text + "'");
+                        command.CommandText = ("Select * From [Users] where CardID = '" + cardID_box.Text + "'");
 
                         using (DbDataReader dataReader = command.ExecuteReader())
                         {
@@ -78,7 +78,7 @@ namespace Bankomat
 
                         connetionString = "Data Source=GAMEING-DESKTOP\\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False";
 
-                        sql = "INSERT INTO [Table] (CardId, Pin, Money) VALUES (@CardId, @Pin, @Money)";
+                        sql = "INSERT INTO [Users] (CardId, Pin, Money) VALUES (@CardId, @Pin, @Money)";
 
                         using (SqlConnection cnn = new SqlConnection(connetionString))
                         {
@@ -131,8 +131,8 @@ namespace Bankomat
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
+            Admin admin = new Admin();
+            admin.Show();
             this.Hide();
         }
     }

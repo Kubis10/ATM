@@ -56,7 +56,7 @@ namespace Bankomat
 
                 command.Connection = connection;
 
-                command.CommandText = ("Select [Pin] From [Table] where CardID = " + Program.globalCardId);
+                command.CommandText = ("Select [Pin] From [Users] where CardID = " + Program.globalCardId);
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {
@@ -78,7 +78,7 @@ namespace Bankomat
 
                         connetionString = "Data Source=GAMEING-DESKTOP\\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False";
 
-                        sql = "update [Table] set [Pin] = @Pin where CardID = @CardId";
+                        sql = "update [Users] set [Pin] = @Pin where CardID = @CardId";
 
                         using (SqlConnection cnn = new SqlConnection(connetionString))
                         {
@@ -130,8 +130,8 @@ namespace Bankomat
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
+            Ustawienia ustawienia = new Ustawienia();
+            ustawienia.Show();
             this.Hide();
         }
     }

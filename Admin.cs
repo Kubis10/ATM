@@ -16,5 +16,19 @@ namespace Bankomat
         {
             InitializeComponent();
         }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            Dodaj dodaj = new Dodaj();
+            dodaj.Show();
+            this.Hide();
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

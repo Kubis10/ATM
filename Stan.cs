@@ -42,7 +42,7 @@ namespace Bankomat
 
                 command.Connection = connection;
 
-                command.CommandText = "Select * From [Table]";
+                command.CommandText = "Select * From [Users]";
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {
@@ -52,7 +52,7 @@ namespace Bankomat
                     }
                 }
 
-                command.CommandText = ("Select [Money] From [Table] Where CardID='" + Program.globalCardId + "'");
+                command.CommandText = ("Select [Money] From [Users] Where CardID='" + Program.globalCardId + "'");
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Bankomat
 {
-    public partial class Przelewy : Form
+    public partial class Ustawienia : Form
     {
-        public Przelewy()
+        public Ustawienia()
         {
             InitializeComponent();
         }

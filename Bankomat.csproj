@@ -59,6 +59,12 @@
     <Compile Include="Dodaj.Designer.cs">
       <DependentUpon>Dodaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historia.Designer.cs">
+      <DependentUpon>Historia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     <Compile Include="Transakcje.Designer.cs">
       <DependentUpon>Transakcje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ustawienia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ustawienia.Designer.cs">
+      <DependentUpon>Ustawienia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wplata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dodaj.resx">
       <DependentUpon>Dodaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historia.resx">
+      <DependentUpon>Historia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -139,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transakcje.resx">
       <DependentUpon>Transakcje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ustawienia.resx">
+      <DependentUpon>Ustawienia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wplata.resx">
       <DependentUpon>Wplata.cs</DependentUpon>
@@ -170,6 +188,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

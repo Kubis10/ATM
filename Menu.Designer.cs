@@ -33,11 +33,12 @@ namespace Bankomat
             this.konto_btn = new System.Windows.Forms.Button();
             this.wplata_btn = new System.Windows.Forms.Button();
             this.wyplata_btn = new System.Windows.Forms.Button();
-            this.zmien_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
             this.trans_btn = new System.Windows.Forms.Button();
             this.przelew_btn = new System.Windows.Forms.Button();
+            this.sett_btn = new System.Windows.Forms.Button();
             this.admin_btn = new System.Windows.Forms.Button();
+            this.history_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // konto_btn
@@ -73,17 +74,6 @@ namespace Bankomat
             this.wyplata_btn.UseVisualStyleBackColor = true;
             this.wyplata_btn.Click += new System.EventHandler(this.wyplata_btn_Click);
             // 
-            // zmien_btn
-            // 
-            this.zmien_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.zmien_btn.Location = new System.Drawing.Point(446, 235);
-            this.zmien_btn.Name = "zmien_btn";
-            this.zmien_btn.Size = new System.Drawing.Size(87, 40);
-            this.zmien_btn.TabIndex = 3;
-            this.zmien_btn.Text = "Zmień PIN";
-            this.zmien_btn.UseVisualStyleBackColor = true;
-            this.zmien_btn.Click += new System.EventHandler(this.zmien_btn_Click);
-            // 
             // exit_btn
             // 
             this.exit_btn.BackColor = System.Drawing.Color.Firebrick;
@@ -107,6 +97,7 @@ namespace Bankomat
             this.trans_btn.TabIndex = 6;
             this.trans_btn.Text = "Transakcje";
             this.trans_btn.UseVisualStyleBackColor = true;
+            this.trans_btn.Click += new System.EventHandler(this.trans_btn_Click);
             // 
             // przelew_btn
             // 
@@ -117,6 +108,20 @@ namespace Bankomat
             this.przelew_btn.TabIndex = 7;
             this.przelew_btn.Text = "Przelewy";
             this.przelew_btn.UseVisualStyleBackColor = true;
+            this.przelew_btn.Click += new System.EventHandler(this.przelew_btn_Click);
+            // 
+            // sett_btn
+            // 
+            this.sett_btn.Image = global::Bankomat.Properties.Resources.settings;
+            this.sett_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.sett_btn.Location = new System.Drawing.Point(708, 383);
+            this.sett_btn.Name = "sett_btn";
+            this.sett_btn.Size = new System.Drawing.Size(80, 55);
+            this.sett_btn.TabIndex = 8;
+            this.sett_btn.Text = "Ustawienia";
+            this.sett_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.sett_btn.UseVisualStyleBackColor = true;
+            this.sett_btn.Click += new System.EventHandler(this.sett_btn_Click);
             // 
             // admin_btn
             // 
@@ -132,16 +137,28 @@ namespace Bankomat
             this.admin_btn.Visible = false;
             this.admin_btn.Click += new System.EventHandler(this.admin_btn_Click);
             // 
+            // history_btn
+            // 
+            this.history_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.history_btn.Location = new System.Drawing.Point(446, 235);
+            this.history_btn.Name = "history_btn";
+            this.history_btn.Size = new System.Drawing.Size(87, 40);
+            this.history_btn.TabIndex = 9;
+            this.history_btn.Text = "Historia konta";
+            this.history_btn.UseVisualStyleBackColor = true;
+            this.history_btn.Click += new System.EventHandler(this.history_btn_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.history_btn);
+            this.Controls.Add(this.sett_btn);
             this.Controls.Add(this.przelew_btn);
             this.Controls.Add(this.trans_btn);
             this.Controls.Add(this.admin_btn);
             this.Controls.Add(this.exit_btn);
-            this.Controls.Add(this.zmien_btn);
             this.Controls.Add(this.wyplata_btn);
             this.Controls.Add(this.wplata_btn);
             this.Controls.Add(this.konto_btn);
@@ -158,10 +175,11 @@ namespace Bankomat
         private System.Windows.Forms.Button konto_btn;
         private System.Windows.Forms.Button wplata_btn;
         private System.Windows.Forms.Button wyplata_btn;
-        private System.Windows.Forms.Button zmien_btn;
         private System.Windows.Forms.Button exit_btn;
         private System.Windows.Forms.Button admin_btn;
         private System.Windows.Forms.Button trans_btn;
         private System.Windows.Forms.Button przelew_btn;
+        private System.Windows.Forms.Button sett_btn;
+        private System.Windows.Forms.Button history_btn;
     }
 }

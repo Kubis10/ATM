@@ -16,5 +16,12 @@ namespace Bankomat
         {
             InitializeComponent();
         }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

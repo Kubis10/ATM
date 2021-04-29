@@ -37,10 +37,24 @@ namespace Bankomat
             this.Hide();
         }
 
-        private void zmien_btn_Click(object sender, EventArgs e)
+        private void przelew_btn_Click(object sender, EventArgs e)
         {
-            ZmienPin zmien = new ZmienPin();
-            zmien.Show();
+            Przelewy przelewy = new Przelewy();
+            przelewy.Show();
+            this.Hide();
+        }
+
+        private void trans_btn_Click(object sender, EventArgs e)
+        {
+            Transakcje transakcje = new Transakcje();
+            transakcje.Show();
+            this.Hide();
+        }
+
+        private void history_btn_Click(object sender, EventArgs e)
+        {
+            Historia historia = new Historia();
+            historia.Show();
             this.Hide();
         }
 
@@ -51,11 +65,19 @@ namespace Bankomat
             this.Hide();
         }
 
+        private void sett_btn_Click(object sender, EventArgs e)
+        {
+            Ustawienia ustawienia = new Ustawienia();
+            ustawienia.Show();
+            this.Hide();
+        }
+
         private void exit_btn_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             login.Show();
             this.Hide();
         }
+
     }
 }

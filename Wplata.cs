@@ -19,7 +19,7 @@ namespace Bankomat
 
             connetionString = "Data Source=GAMEING-DESKTOP\\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False";
 
-            sql = "update [Table] set [Money] += @Money where CardID = @CardId";
+            sql = "update [Users] set [Money] += @Money where CardID = @CardId";
 
             using (SqlConnection cnn = new SqlConnection(connetionString))
             {

@@ -31,6 +31,7 @@ namespace Bankomat
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ustawienia));
             this.back_btn = new System.Windows.Forms.Button();
+            this.zmien_pin_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // back_btn
@@ -43,11 +44,23 @@ namespace Bankomat
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
+            // zmien_pin_btn
+            // 
+            this.zmien_pin_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.zmien_pin_btn.Location = new System.Drawing.Point(269, 180);
+            this.zmien_pin_btn.Name = "zmien_pin_btn";
+            this.zmien_pin_btn.Size = new System.Drawing.Size(87, 40);
+            this.zmien_pin_btn.TabIndex = 12;
+            this.zmien_pin_btn.Text = "Zmień PIN";
+            this.zmien_pin_btn.UseVisualStyleBackColor = true;
+            this.zmien_pin_btn.Click += new System.EventHandler(this.zmien_pin_btn_Click);
+            // 
             // Ustawienia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.zmien_pin_btn);
             this.Controls.Add(this.back_btn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ustawienia";
@@ -59,5 +72,6 @@ namespace Bankomat
         #endregion
 
         private System.Windows.Forms.Button back_btn;
+        private System.Windows.Forms.Button zmien_pin_btn;
     }
 }

@@ -10,27 +10,17 @@ using System.Windows.Forms;
 
 namespace Bankomat
 {
-    public partial class Przelewy : Form
+    public partial class PrzelewT : Form
     {
-        public Przelewy()
+        public PrzelewT()
         {
             InitializeComponent();
         }
 
-        private void telp_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cardp_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            menu.Show();
+            Przelewy przelewy = new Przelewy();
+            przelewy.Show();
             this.Hide();
         }
     }

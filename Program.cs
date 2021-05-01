@@ -5,7 +5,7 @@ namespace Bankomat
 {
     internal static class Program
     {
-        public static string globalCardId = "";
+        public static string globalCardId = "12345678901";
 
         /// <summary>
         /// Główny punkt wejścia dla aplikacji.
@@ -15,7 +15,7 @@ namespace Bankomat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Kursy());
         }
     }
 }

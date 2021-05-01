@@ -58,6 +58,20 @@ namespace Bankomat
             this.Hide();
         }
 
+        private void kurs_btn_Click(object sender, EventArgs e)
+        {
+            Kursy kursy = new Kursy();
+            kursy.Show();
+            this.Hide();
+        }
+
+        private void blik_btn_Click(object sender, EventArgs e)
+        {
+            Blik blik = new Blik();
+            blik.Show();
+            this.Hide();
+        }
+
         private void admin_btn_Click(object sender, EventArgs e)
         {
             Admin admin = new Admin();
@@ -78,6 +92,5 @@ namespace Bankomat
             login.Show();
             this.Hide();
         }
-
     }
 }

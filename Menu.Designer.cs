@@ -39,12 +39,14 @@ namespace Bankomat
             this.sett_btn = new System.Windows.Forms.Button();
             this.admin_btn = new System.Windows.Forms.Button();
             this.history_btn = new System.Windows.Forms.Button();
+            this.kurs_btn = new System.Windows.Forms.Button();
+            this.blik_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // konto_btn
             // 
             this.konto_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.konto_btn.Location = new System.Drawing.Point(280, 164);
+            this.konto_btn.Location = new System.Drawing.Point(280, 138);
             this.konto_btn.Name = "konto_btn";
             this.konto_btn.Size = new System.Drawing.Size(87, 40);
             this.konto_btn.TabIndex = 0;
@@ -55,7 +57,7 @@ namespace Bankomat
             // wplata_btn
             // 
             this.wplata_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wplata_btn.Location = new System.Drawing.Point(280, 92);
+            this.wplata_btn.Location = new System.Drawing.Point(280, 73);
             this.wplata_btn.Name = "wplata_btn";
             this.wplata_btn.Size = new System.Drawing.Size(87, 40);
             this.wplata_btn.TabIndex = 1;
@@ -66,7 +68,7 @@ namespace Bankomat
             // wyplata_btn
             // 
             this.wyplata_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wyplata_btn.Location = new System.Drawing.Point(446, 92);
+            this.wyplata_btn.Location = new System.Drawing.Point(446, 73);
             this.wyplata_btn.Name = "wyplata_btn";
             this.wyplata_btn.Size = new System.Drawing.Size(87, 40);
             this.wyplata_btn.TabIndex = 2;
@@ -80,7 +82,7 @@ namespace Bankomat
             this.exit_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.exit_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.exit_btn.Location = new System.Drawing.Point(364, 362);
+            this.exit_btn.Location = new System.Drawing.Point(363, 370);
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(87, 38);
             this.exit_btn.TabIndex = 4;
@@ -91,7 +93,7 @@ namespace Bankomat
             // trans_btn
             // 
             this.trans_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trans_btn.Location = new System.Drawing.Point(280, 235);
+            this.trans_btn.Location = new System.Drawing.Point(280, 204);
             this.trans_btn.Name = "trans_btn";
             this.trans_btn.Size = new System.Drawing.Size(87, 40);
             this.trans_btn.TabIndex = 6;
@@ -102,7 +104,7 @@ namespace Bankomat
             // przelew_btn
             // 
             this.przelew_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.przelew_btn.Location = new System.Drawing.Point(446, 164);
+            this.przelew_btn.Location = new System.Drawing.Point(446, 138);
             this.przelew_btn.Name = "przelew_btn";
             this.przelew_btn.Size = new System.Drawing.Size(87, 40);
             this.przelew_btn.TabIndex = 7;
@@ -140,7 +142,7 @@ namespace Bankomat
             // history_btn
             // 
             this.history_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.history_btn.Location = new System.Drawing.Point(446, 235);
+            this.history_btn.Location = new System.Drawing.Point(280, 273);
             this.history_btn.Name = "history_btn";
             this.history_btn.Size = new System.Drawing.Size(87, 40);
             this.history_btn.TabIndex = 9;
@@ -148,11 +150,35 @@ namespace Bankomat
             this.history_btn.UseVisualStyleBackColor = true;
             this.history_btn.Click += new System.EventHandler(this.history_btn_Click);
             // 
+            // kurs_btn
+            // 
+            this.kurs_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kurs_btn.Location = new System.Drawing.Point(446, 204);
+            this.kurs_btn.Name = "kurs_btn";
+            this.kurs_btn.Size = new System.Drawing.Size(87, 40);
+            this.kurs_btn.TabIndex = 10;
+            this.kurs_btn.Text = "Kurs walut";
+            this.kurs_btn.UseVisualStyleBackColor = true;
+            this.kurs_btn.Click += new System.EventHandler(this.kurs_btn_Click);
+            // 
+            // blik_btn
+            // 
+            this.blik_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.blik_btn.Location = new System.Drawing.Point(446, 273);
+            this.blik_btn.Name = "blik_btn";
+            this.blik_btn.Size = new System.Drawing.Size(87, 40);
+            this.blik_btn.TabIndex = 11;
+            this.blik_btn.Text = "BLIK";
+            this.blik_btn.UseVisualStyleBackColor = true;
+            this.blik_btn.Click += new System.EventHandler(this.blik_btn_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.blik_btn);
+            this.Controls.Add(this.kurs_btn);
             this.Controls.Add(this.history_btn);
             this.Controls.Add(this.sett_btn);
             this.Controls.Add(this.przelew_btn);
@@ -181,5 +207,7 @@ namespace Bankomat
         private System.Windows.Forms.Button przelew_btn;
         private System.Windows.Forms.Button sett_btn;
         private System.Windows.Forms.Button history_btn;
+        private System.Windows.Forms.Button kurs_btn;
+        private System.Windows.Forms.Button blik_btn;
     }
 }

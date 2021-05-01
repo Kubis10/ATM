@@ -23,5 +23,12 @@ namespace Bankomat
             menu.Show();
             this.Hide();
         }
+
+        private void zmien_pin_btn_Click(object sender, EventArgs e)
+        {
+            ZmienPin zmien = new ZmienPin();
+            zmien.Show();
+            this.Hide();
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace Bankomat
 {
-    partial class Przelewy
+    partial class PrzelewT
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,8 @@ namespace Bankomat
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Przelewy));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrzelewT));
             this.back_btn = new System.Windows.Forms.Button();
-            this.telp_btn = new System.Windows.Forms.Button();
-            this.cardp_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // back_btn
@@ -41,43 +39,19 @@ namespace Bankomat
             this.back_btn.Location = new System.Drawing.Point(748, 398);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(40, 40);
-            this.back_btn.TabIndex = 12;
+            this.back_btn.TabIndex = 13;
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // telp_btn
-            // 
-            this.telp_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.telp_btn.Location = new System.Drawing.Point(247, 166);
-            this.telp_btn.Name = "telp_btn";
-            this.telp_btn.Size = new System.Drawing.Size(80, 80);
-            this.telp_btn.TabIndex = 13;
-            this.telp_btn.Text = "Przelew na telefon";
-            this.telp_btn.UseVisualStyleBackColor = true;
-            this.telp_btn.Click += new System.EventHandler(this.telp_btn_Click);
-            // 
-            // cardp_btn
-            // 
-            this.cardp_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cardp_btn.Location = new System.Drawing.Point(442, 166);
-            this.cardp_btn.Name = "cardp_btn";
-            this.cardp_btn.Size = new System.Drawing.Size(80, 80);
-            this.cardp_btn.TabIndex = 14;
-            this.cardp_btn.Text = "Przelew na konto";
-            this.cardp_btn.UseVisualStyleBackColor = true;
-            this.cardp_btn.Click += new System.EventHandler(this.cardp_btn_Click);
-            // 
-            // Przelewy
+            // PrzelewT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cardp_btn);
-            this.Controls.Add(this.telp_btn);
             this.Controls.Add(this.back_btn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Przelewy";
-            this.Text = "Przelewy";
+            this.Name = "PrzelewT";
+            this.Text = "Przelew na telefon";
             this.ResumeLayout(false);
 
         }
@@ -85,7 +59,5 @@ namespace Bankomat
         #endregion
 
         private System.Windows.Forms.Button back_btn;
-        private System.Windows.Forms.Button telp_btn;
-        private System.Windows.Forms.Button cardp_btn;
     }
 }

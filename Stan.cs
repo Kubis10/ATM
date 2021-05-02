@@ -12,6 +12,8 @@ namespace Bankomat
             InitializeComponent();
         }
 
+        public double mons;
+
         private void Stan_Load(object sender, EventArgs e)
         {
             string provider = ConfigurationManager.AppSettings["provider"];
@@ -60,6 +62,7 @@ namespace Bankomat
                     {
                         String st = ($"{dataReader["Money"]}");
                         st = st.Substring(0, st.Length - 2);
+                        mons = double.Parse(st);
                         stan_konta.Text = (st + " zł");
                     }
                 }
@@ -71,6 +74,11 @@ namespace Bankomat
             Menu menu = new Menu();
             menu.Show();
             this.Hide();
+        }
+
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
 
@@ -29,7 +30,7 @@ namespace Bankomat
 
         private void get_response()
         {
-            WebClient wp = new WebClient();
+            WebClient wp = new WebClient() { Encoding = Encoding.UTF8 };
             string url = "http://api.nbp.pl/api/exchangerates/tables/a/?format=json";
             var response = wp.DownloadString(url);
             var options = new JsonSerializerOptions

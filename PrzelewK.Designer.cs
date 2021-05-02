@@ -90,7 +90,6 @@ namespace Bankomat
             // 
             // kwota
             // 
-            this.kwota.DecimalPlaces = 2;
             this.kwota.Location = new System.Drawing.Point(340, 207);
             this.kwota.Maximum = new decimal(new int[] {
             10000,

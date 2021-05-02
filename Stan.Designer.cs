@@ -33,6 +33,7 @@ namespace Bankomat
             this.back_btn = new System.Windows.Forms.Button();
             this.acc_stan = new System.Windows.Forms.Label();
             this.stan_konta = new System.Windows.Forms.Label();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // back_btn
@@ -66,11 +67,21 @@ namespace Bankomat
             this.stan_konta.Text = "0zł";
             this.stan_konta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Location = new System.Drawing.Point(332, 239);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(121, 21);
+            this.comboBox.TabIndex = 3;
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
+            // 
             // Stan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.stan_konta);
             this.Controls.Add(this.acc_stan);
             this.Controls.Add(this.back_btn);
@@ -88,5 +99,6 @@ namespace Bankomat
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Label acc_stan;
         private System.Windows.Forms.Label stan_konta;
+        private System.Windows.Forms.ComboBox comboBox;
     }
 }

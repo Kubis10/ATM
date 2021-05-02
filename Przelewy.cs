@@ -19,12 +19,16 @@ namespace Bankomat
 
         private void telp_btn_Click(object sender, EventArgs e)
         {
-
+            PrzelewT przelewT = new PrzelewT();
+            przelewT.Show();
+            this.Hide();
         }
 
         private void cardp_btn_Click(object sender, EventArgs e)
         {
-
+            PrzelewK przelewK = new PrzelewK();
+            przelewK.Show();
+            this.Hide();
         }
 
         private void back_btn_Click(object sender, EventArgs e)

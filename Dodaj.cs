@@ -78,7 +78,7 @@ namespace Bankomat
 
                         connetionString = "Data Source=GAMEING-DESKTOP\\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False";
 
-                        sql = "INSERT INTO [Users] (CardId, Pin, Money) VALUES (@CardId, @Pin, @Money)";
+                        sql = "INSERT INTO [Users] (CardId, Tel, Pin, Money) VALUES (@CardId, @Tel, @Pin, @Money)";
 
                         using (SqlConnection cnn = new SqlConnection(connetionString))
                         {
@@ -91,6 +91,7 @@ namespace Bankomat
                                     cmd.Parameters.Add("@CardId", SqlDbType.NVarChar).Value = cardID_box.Text;
                                     cmd.Parameters.Add("@Pin", SqlDbType.NVarChar).Value = pin_box.Text;
                                     cmd.Parameters.Add("@Money", SqlDbType.NVarChar).Value = money_box.Text;
+                                    cmd.Parameters.Add("@Tel", SqlDbType.NVarChar).Value = tel_box.Text;
 
                                     int rowsAdded = cmd.ExecuteNonQuery();
                                     if (rowsAdded > 0)

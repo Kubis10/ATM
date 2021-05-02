@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,11 +20,134 @@ namespace Bankomat
             InitializeComponent();
         }
 
+        public static bool tel = false;
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void back_btn_Click(object sender, EventArgs e)
         {
             Przelewy przelewy = new Przelewy();
             przelewy.Show();
             this.Hide();
+        }
+
+        private void ok_btn_Click(object sender, EventArgs e)
+        {
+            string provider = ConfigurationManager.AppSettings["provider"];
+
+            string connectionString = ConfigurationManager.AppSettings["connectionString"];
+
+            DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
+
+            using (DbConnection connection = factory.CreateConnection())
+            {
+                if (connection == null)
+                {
+                    Console.WriteLine("Connection Error");
+                    Console.ReadLine();
+                    return;
+                }
+
+                connection.ConnectionString = connectionString;
+
+                connection.Open();
+
+                DbCommand command = factory.CreateCommand();
+
+                if (command == null)
+                {
+                    Console.WriteLine("Command Error");
+                    Console.ReadLine();
+                    return;
+                }
+
+                command.Connection = connection;
+
+                command.CommandText = ("Select [Pin] From [Users] where Tel = '" + t_box.Value + "'");
+
+                using (DbDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        PrzelewT.tel = true;
+                    }
+                }
+            }
+            if (PrzelewT.tel == true)
+            {
+                string connetionString = null;
+                string sql = null;
+
+                connetionString = "Data Source=GAMEING-DESKTOP\\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False";
+
+                sql = "update [Users] set [Money] -= @money where CardID = @CardId";
+
+                using (SqlConnection cnn = new SqlConnection(connetionString))
+                {
+                    try
+                    {
+                        cnn.Open();
+
+                        using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                        {
+                            cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = Math.Round(kwota.Value, 2);
+                            cmd.Parameters.Add("@CardId", SqlDbType.NVarChar).Value = Program.globalCardId;
+
+                            int rowsAdded = cmd.ExecuteNonQuery();
+                            if (rowsAdded > 0)
+                            {
+                                Console.WriteLine("Odebrano");
+                            }
+                            else
+                                MessageBox.Show("Wystąpił problem spróbuj ponownie później");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR:" + ex.Message);
+                    }
+                }
+                sql = "update [Users] set [Money] += @money where Tel = @Tel";
+
+                using (SqlConnection cnn = new SqlConnection(connetionString))
+                {
+                    try
+                    {
+                        cnn.Open();
+
+                        using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                        {
+                            cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = Math.Round(kwota.Value, 2);
+                            cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = t_box.Value;
+
+                            int rowsAdded = cmd.ExecuteNonQuery();
+                            if (rowsAdded > 0)
+                            {
+                                MessageBox.Show("Przelew udany!");
+                                Menu menu = new Menu();
+                                menu.Show();
+                                this.Hide();
+                            }
+                            else
+                                MessageBox.Show("Wystąpił problem spróbuj ponownie później");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR:" + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie znaleziono takiego użytkownika!", "Error");
+            }
         }
     }
 }

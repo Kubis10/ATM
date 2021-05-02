@@ -75,6 +75,7 @@ namespace Bankomat
             this.comboBox.Size = new System.Drawing.Size(121, 21);
             this.comboBox.TabIndex = 3;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
+            this.comboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.myCombo_KeyPress);
             // 
             // Stan
             // 

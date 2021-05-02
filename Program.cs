@@ -15,7 +15,7 @@ namespace Bankomat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Stan());
+            Application.Run(new Menu());
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Bankomat
             connetionString = "Data Source=GAMEING-DESKTOP\\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False";
 
             sql = "update [Users] set [Money] -= @Money where CardID = @CardId";
+            var sqladd = "insert into Historia (card_out, card_in, opis, money) values (@cardout, 'Brak', 'Wypłata do bankomatu', @Money)";
 
             using (SqlConnection cnn = new SqlConnection(connetionString))
             {
@@ -31,6 +32,19 @@ namespace Bankomat
                     {
                         cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = Math.Round(money.Value, 2);
                         cmd.Parameters.Add("@CardId", SqlDbType.NVarChar).Value = Program.globalCardId;
+
+                        int rowsAdded = cmd.ExecuteNonQuery();
+                        if (rowsAdded > 0)
+                        {
+                            money.Enabled = false;
+                        }
+                        else
+                            MessageBox.Show("Wystąpił problem spróbuj ponownie później");
+                    }
+                    using (SqlCommand cmd = new SqlCommand(sqladd, cnn))
+                    {
+                        cmd.Parameters.Add("@Money", SqlDbType.NVarChar).Value = Math.Round(money.Value, 2);
+                        cmd.Parameters.Add("@cardout", SqlDbType.NVarChar).Value = Program.globalCardId;
 
                         int rowsAdded = cmd.ExecuteNonQuery();
                         if (rowsAdded > 0)

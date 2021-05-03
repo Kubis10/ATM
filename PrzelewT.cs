@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bankomat
@@ -21,6 +15,7 @@ namespace Bankomat
         }
 
         public static bool tel = false;
+        private static string knt;
 
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -69,13 +64,15 @@ namespace Bankomat
 
                 command.Connection = connection;
 
-                command.CommandText = ("Select [Pin] From [Users] where Tel = '" + t_box.Value + "'");
+                command.CommandText = ("Select [CardID] From [Users] where Tel = '" + t_box.Value + "'");
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {
                     while (dataReader.Read())
                     {
                         PrzelewT.tel = true;
+                        PrzelewT.knt = $"{dataReader["CardID"]} ";
+
                     }
                 }
             }
@@ -125,6 +122,33 @@ namespace Bankomat
                         {
                             cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = Math.Round(kwota.Value, 2);
                             cmd.Parameters.Add("@tel", SqlDbType.NVarChar).Value = t_box.Value;
+
+                            int rowsAdded = cmd.ExecuteNonQuery();
+                            if (rowsAdded > 0)
+                            {
+                                Console.WriteLine("Zabranov2");
+                            }
+                            else
+                                MessageBox.Show("Wystąpił problem spróbuj ponownie później");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR:" + ex.Message);
+                    }
+                }
+                sql = "insert into Historia (card_out, card_in, opis, money) values (@cardout, @cardout, 'Przelew na telefon', @Money)";
+                using (SqlConnection cnn = new SqlConnection(connetionString))
+                {
+                    try
+                    {
+                        cnn.Open();
+
+                        using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                        {
+                            cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = Math.Round(kwota.Value, 2);
+                            cmd.Parameters.Add("@cardout", SqlDbType.NVarChar).Value = Program.globalCardId;
+                            cmd.Parameters.Add("@cardin", SqlDbType.NVarChar).Value = knt;
 
                             int rowsAdded = cmd.ExecuteNonQuery();
                             if (rowsAdded > 0)

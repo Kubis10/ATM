@@ -126,13 +126,6 @@ namespace Bankomat
                                 {
                                     MessageBox.Show("Pomyślnie zapłacono!");
                                     i++;
-                                if (i > ile)
-                                {
-                                    MessageBox.Show("Pomyślnie zapłacono wszystkie rachunki!", "SUCESS");
-                                    Menu menu = new Menu();
-                                    menu.Show();
-                                    this.Hide();
-                                }
                                     label2.Text = "Podaj cene " + i + " rachunku:";
                                     ammo_box.Text = "";
                                 }
@@ -145,7 +138,39 @@ namespace Bankomat
                             MessageBox.Show("ERROR:" + ex.Message);
                         }
                     }
+                sql = "insert into Historia (card_out, card_in, opis, money) values ('Nieznane ID', @cardout, 'Transakcja', @Money)";
+                using (SqlConnection cnn = new SqlConnection(connetionString))
+                {
+                    try
+                    {
+                        cnn.Open();
+
+                        using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                        {
+                            cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = Math.Round(userVal, 2);
+                            cmd.Parameters.Add("@cardout", SqlDbType.NVarChar).Value = Program.globalCardId;
+
+                            int rowsAdded = cmd.ExecuteNonQuery();
+                            if (rowsAdded > 0)
+                            {
+                                if (i > ile)
+                                {
+                                    MessageBox.Show("Pomyślnie zapłacono wszystkie rachunki!", "SUCESS");
+                                    Menu menu = new Menu();
+                                    menu.Show();
+                                    this.Hide();
+                                }
+                            }
+                            else
+                                MessageBox.Show("Wystąpił problem spróbuj ponownie później");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR:" + ex.Message);
+                    }
                 }
+        }
                 else
                 {
                     MessageBox.Show("Nie masz wystarczających środków na koncie!", "ERROR");

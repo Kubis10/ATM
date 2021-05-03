@@ -123,6 +123,33 @@ namespace Bankomat
                             int rowsAdded = cmd.ExecuteNonQuery();
                             if (rowsAdded > 0)
                             {
+                                Console.WriteLine("Zabranov2");
+                            }
+                            else
+                                MessageBox.Show("Wystąpił problem spróbuj ponownie później");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR:" + ex.Message);
+                    }
+                }
+                sql = "insert into Historia (card_out, card_in, opis, money) values (@cardout, @cardout, 'Przelew na konto', @Money)";
+                using (SqlConnection cnn = new SqlConnection(connetionString))
+                {
+                    try
+                    {
+                        cnn.Open();
+
+                        using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                        {
+                            cmd.Parameters.Add("@money", SqlDbType.NVarChar).Value = Math.Round(kwota.Value, 2);
+                            cmd.Parameters.Add("@cardout", SqlDbType.NVarChar).Value = Program.globalCardId;
+                            cmd.Parameters.Add("@cardin", SqlDbType.NVarChar).Value = k_box.Text;
+
+                            int rowsAdded = cmd.ExecuteNonQuery();
+                            if (rowsAdded > 0)
+                            {
                                 MessageBox.Show("Przelew udany!");
                                 Menu menu = new Menu();
                                 menu.Show();

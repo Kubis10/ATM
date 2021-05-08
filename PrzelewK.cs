@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Bankomat
@@ -168,6 +169,19 @@ namespace Bankomat
             else
             {
                 MessageBox.Show("Nie znaleziono podanego użytkownika");
+            }
+        }
+
+        private void PrzelewK_Load(object sender, EventArgs e)
+        {
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
             }
         }
     }

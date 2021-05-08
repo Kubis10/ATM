@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Bankomat
@@ -21,6 +22,15 @@ namespace Bankomat
 
         private void Blik_Load(object sender, EventArgs e)
         {
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
+            }
             progressBar.Value=0;
             Random rnd = new Random();
             int fst = rnd.Next(100, 999);

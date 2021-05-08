@@ -98,6 +98,7 @@ namespace Bankomat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Wyplata";
             this.Text = "Wyplata";
+            this.Load += new System.EventHandler(this.Wyplata_Load);
             ((System.ComponentModel.ISupportInitialize)(this.money)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

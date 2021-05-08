@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -62,6 +63,15 @@ namespace Bankomat
         private void Kursy_Load(object sender, EventArgs e)
         {
             get_response();
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
+            }
         }
 
         private void back_btn_Click(object sender, EventArgs e)

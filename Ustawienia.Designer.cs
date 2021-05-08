@@ -32,6 +32,7 @@ namespace Bankomat
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ustawienia));
             this.back_btn = new System.Windows.Forms.Button();
             this.zmien_pin_btn = new System.Windows.Forms.Button();
+            this.chn_theme = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // back_btn
@@ -55,16 +56,29 @@ namespace Bankomat
             this.zmien_pin_btn.UseVisualStyleBackColor = true;
             this.zmien_pin_btn.Click += new System.EventHandler(this.zmien_pin_btn_Click);
             // 
+            // chn_theme
+            // 
+            this.chn_theme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chn_theme.Location = new System.Drawing.Point(452, 180);
+            this.chn_theme.Name = "chn_theme";
+            this.chn_theme.Size = new System.Drawing.Size(87, 40);
+            this.chn_theme.TabIndex = 13;
+            this.chn_theme.Text = "Zmień szablon";
+            this.chn_theme.UseVisualStyleBackColor = true;
+            this.chn_theme.Click += new System.EventHandler(this.chn_theme_Click);
+            // 
             // Ustawienia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chn_theme);
             this.Controls.Add(this.zmien_pin_btn);
             this.Controls.Add(this.back_btn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ustawienia";
             this.Text = "Ustawienia";
+            this.Load += new System.EventHandler(this.Ustawienia_Load);
             this.ResumeLayout(false);
 
         }
@@ -73,5 +87,6 @@ namespace Bankomat
 
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Button zmien_pin_btn;
+        private System.Windows.Forms.Button chn_theme;
     }
 }

@@ -30,5 +30,26 @@ namespace Bankomat
             menu.Show();
             this.Hide();
         }
+
+        private void block_btn_Click(object sender, EventArgs e)
+        {
+            Blocked blocked = new Blocked();
+            blocked.Show();
+            this.Hide();
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
+            }
+        }
+
     }
 }

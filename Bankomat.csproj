@@ -36,6 +36,16 @@
     <Reference Include="Carbon.Json, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Carbon.Json.3.0.0\lib\netstandard2.0\Carbon.Json.dll</HintPath>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -92,6 +102,12 @@
     </Compile>
     <Compile Include="Blik.Designer.cs">
       <DependentUpon>Blik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Blocked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Blocked.Designer.cs">
+      <DependentUpon>Blocked.cs</DependentUpon>
     </Compile>
     <Compile Include="Dodaj.cs">
       <SubType>Form</SubType>
@@ -185,6 +201,9 @@
     <EmbeddedResource Include="Blik.resx">
       <DependentUpon>Blik.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Blocked.resx">
+      <DependentUpon>Blocked.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dodaj.resx">
       <DependentUpon>Dodaj.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +256,7 @@
     <EmbeddedResource Include="ZmienPin.resx">
       <DependentUpon>ZmienPin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -261,6 +281,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="user-blocked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Bankomat
@@ -71,6 +72,19 @@ namespace Bankomat
             Menu menu = new Menu();
             menu.Show();
             this.Hide();
+        }
+
+        private void Wplata_Load(object sender, EventArgs e)
+        {
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
+            }
         }
     }
 }

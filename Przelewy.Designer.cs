@@ -78,6 +78,7 @@ namespace Bankomat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Przelewy";
             this.Text = "Przelewy";
+            this.Load += new System.EventHandler(this.Przelewy_Load);
             this.ResumeLayout(false);
 
         }

@@ -124,6 +124,7 @@ namespace Bankomat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrzelewT";
             this.Text = "Przelew na telefon";
+            this.Load += new System.EventHandler(this.PrzelewT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.t_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kwota)).EndInit();
             this.ResumeLayout(false);

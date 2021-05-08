@@ -134,6 +134,7 @@ namespace Bankomat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ZmienPin";
             this.Text = "ZmienPin";
+            this.Load += new System.EventHandler(this.ZmienPin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

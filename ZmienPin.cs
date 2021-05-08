@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Bankomat
@@ -140,6 +141,19 @@ namespace Bankomat
             Ustawienia ustawienia = new Ustawienia();
             ustawienia.Show();
             this.Hide();
+        }
+
+        private void ZmienPin_Load(object sender, EventArgs e)
+        {
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
+            }
         }
     }
 }

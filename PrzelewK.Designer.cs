@@ -114,6 +114,7 @@ namespace Bankomat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrzelewK";
             this.Text = "Przelew na konto";
+            this.Load += new System.EventHandler(this.PrzelewK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kwota)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

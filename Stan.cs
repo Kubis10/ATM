@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Bankomat
 {
@@ -27,6 +28,15 @@ namespace Bankomat
 
         private void Stan_Load(object sender, EventArgs e)
         {
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
+            }
             string provider = ConfigurationManager.AppSettings["provider"];
 
             string connectionString = ConfigurationManager.AppSettings["connectionString"];

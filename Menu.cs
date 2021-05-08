@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Bankomat
@@ -14,6 +15,16 @@ namespace Bankomat
         {
             if (Program.globalCardId == "12345678901")
                 admin_btn.Visible = true;
+
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
+            }
         }
 
         private void konto_btn_Click(object sender, EventArgs e)

@@ -30,5 +30,33 @@ namespace Bankomat
             zmien.Show();
             this.Hide();
         }
+
+        private void chn_theme_Click(object sender, EventArgs e)
+        {
+            if (Program.theme)
+            {
+                Program.theme = false;
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                Program.theme = true;
+                this.BackColor = Control.DefaultBackColor;
+            }
+        }
+
+        private void Ustawienia_Load(object sender, EventArgs e)
+        {
+            if (Program.theme == false)
+            {
+                Color Warn1Color = Color.FromArgb(70, 70, 70);
+                this.BackColor = Warn1Color;
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor;
+            }
+        }
     }
 }

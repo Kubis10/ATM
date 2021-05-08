@@ -162,6 +162,7 @@ namespace Bankomat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dodaj";
             this.Text = " Dodaj użytkownika";
+            this.Load += new System.EventHandler(this.Dodaj_Load);
             ((System.ComponentModel.ISupportInitialize)(this.money_box)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -100,6 +100,7 @@ namespace Bankomat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Blocked";
             this.Text = "Blokowanie użytkowników";
+            this.Load += new System.EventHandler(this.Blocked_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

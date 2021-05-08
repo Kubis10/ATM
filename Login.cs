@@ -32,10 +32,27 @@ namespace Bankomat
             sda.Fill(dt);
             if (dt.Rows.Count >= 1)
             {
-                Program.globalCardId = card_nr.Text;
-                Menu menu = new Menu();
-                menu.Show();
-                this.Hide();
+                string id = "0";
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["Blocked"].ToString() == "1")
+                    {
+                        id = row["Blocked"].ToString();
+                    }
+                }
+                
+                if (id == "0")
+                {
+                    Program.globalCardId = card_nr.Text;
+                    Menu menu = new Menu();
+                    menu.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Skontaktuj się z administratorem banku po pomoc", "Twoje konto jest zablokowane!");
+                    pin_nr.Text = "";
+                }
             }
             else
             {

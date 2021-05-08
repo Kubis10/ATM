@@ -135,7 +135,7 @@ namespace Bankomat
                         MessageBox.Show("ERROR:" + ex.Message);
                     }
                 }
-                sql = "insert into Historia (card_out, card_in, opis, money) values (@cardout, @cardout, 'Przelew na konto', @Money)";
+                sql = "insert into Historia (card_out, card_in, opis, money) values (@cardout, @cardin, 'Przelew na konto', @Money)";
                 using (SqlConnection cnn = new SqlConnection(connetionString))
                 {
                     try

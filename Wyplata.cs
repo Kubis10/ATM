@@ -21,7 +21,7 @@ namespace Bankomat
             connetionString = "Data Source=GAMEING-DESKTOP\\SQLEXPRESS;Initial Catalog=bankomatDB;Integrated Security=True;Pooling=False";
 
             sql = "update [Users] set [Money] -= @Money where CardID = @CardId";
-            var sqladd = "insert into Historia (card_out, card_in, opis, money) values (@cardout, 'Brak', 'Wypłata do bankomatu', @Money)";
+            var sqladd = "insert into Historia (card_out, card_in, opis, money) values (@cardout, 'Brak', 'Wypłata z bankomatu', @Money)";
 
             using (SqlConnection cnn = new SqlConnection(connetionString))
             {

@@ -5,7 +5,7 @@ namespace Bankomat
 {
     internal static class Program
     {
-        public static string globalCardId = "12345678901";
+        public static string globalCardId = "";
         public static bool theme = true;
 
         /// <summary>
@@ -16,7 +16,7 @@ namespace Bankomat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new Login());
         }
     }
 }

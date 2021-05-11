@@ -82,7 +82,7 @@ namespace Bankomat
 
                     using (SqlCommand cmd = new SqlCommand(sql, cnn))
                     {
-                        cmd.Parameters.Add("@CardId", SqlDbType.NVarChar).Value = input_box;
+                        cmd.Parameters.Add("@CardId", SqlDbType.NVarChar).Value = input_box.Text;
 
                         int rowsAdded = cmd.ExecuteNonQuery();
                         if (rowsAdded > 0)

@@ -174,6 +174,7 @@ namespace Bankomat
 
         private void PrzelewK_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             if (Program.theme == false)
             {
                 Color Warn1Color = Color.FromArgb(70, 70, 70);

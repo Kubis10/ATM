@@ -13,6 +13,7 @@ namespace Bankomat
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             if (Program.globalCardId == "12345678901")
                 admin_btn.Visible = true;
 

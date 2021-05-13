@@ -180,6 +180,7 @@ namespace Bankomat
 
         private void Transakcje_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             ile = 0;
             i = 1;
             if (Program.theme == false)

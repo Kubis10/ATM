@@ -62,6 +62,7 @@ namespace Bankomat
 
         private void Kursy_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             get_response();
             if (Program.theme == false)
             {

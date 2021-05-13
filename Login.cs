@@ -66,5 +66,10 @@ namespace Bankomat
         {
             Application.Exit();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }
